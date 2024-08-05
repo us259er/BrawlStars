@@ -20,7 +20,7 @@ internal class Program
         builder.Services.AddSingleton<IGateway, TcpGateway>();
         builder.Services.AddScoped<ISession, TcpSession>();
         builder.Services.AddSingleton<NetSessionManager>();
-        builder.Services.AddSingleton<ProcessorManager>();
+        builder.Services.AddScoped<ProcessorManager>();
         builder.Services.AddLogging(logging => logging.AddSimpleConsole());
 
         builder.Services.Configure<GatewayOptions>(builder.Configuration.GetRequiredSection(GatewayOptions.ConfigSection));
